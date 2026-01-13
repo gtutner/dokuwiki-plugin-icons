@@ -7,6 +7,8 @@
  * @copyright  (C) 2015-2019, Giuseppe Di Terlizzi
  */
 
+use dokuwiki\Extension\Event;
+
 if (!defined('DOKU_INC')) define('DOKU_INC', dirname(__FILE__).'/../../../../');
 define('DOKU_MEDIAMANAGER', 1); // needed to get proper CSS/JS
 
@@ -23,7 +25,7 @@ $JSINFO['id']        = '';
 $JSINFO['namespace'] = '';
 
 $tmp = array();
-trigger_event('MEDIAMANAGER_STARTED', $tmp);
+Event::createAndTrigger('MEDIAMANAGER_STARTED',  $tmp);
 session_write_close();  //close session
 
 
@@ -71,7 +73,8 @@ header('X-UA-Compatible: IE=edge,chrome=1');
     body { padding: 20px; }
     .btn-icon { margin: 4px; padding: 4px; }
     .tab-icons { overflow-y: auto; height: 300px; }
-    .icon { font-size: 2em; width: 1.28571429em; text-align: center; }
+    .icon { font-size: 2em; width: 1.28571429em;
+ text-align: center; }
     <?php if (! $use_glyphicons): ?>
     footer { bottom: 20px; position: fixed; }
     .col-sm-6 { width:50%; float: left; }
