@@ -242,7 +242,7 @@ header('X-UA-Compatible: IE=edge,chrome=1');
     <?php endif; ?>
     <?php if ($use_rpg_awesome): ?>
     <li>
-      <a data-toggle="tab" href="#tab-rpg-awesome" data-pack="fa">RPG-Awesome</a>
+      <a data-toggle="tab" href="#tab-rpg-awesome" data-pack="ra">RPG-Awesome</a>
     </li>
     <?php endif; ?>
 
